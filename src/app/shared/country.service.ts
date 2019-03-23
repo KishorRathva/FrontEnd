@@ -7,7 +7,7 @@ import { Country } from "../country";
 })
 export class CountryService {
   private country: Country;
-  private baseURI: string = "http://localhost:8080/";
+  private baseURI: string = "http://localhost:8080";
   private headers = new HttpHeaders().set("Content-Type", "application/json");
   constructor(private http: HttpClient) {}
 
@@ -33,7 +33,7 @@ export class CountryService {
     this.country = country;
   }
 
-  getter() {
+  getter(): Country {
     return this.country;
   }
 }
