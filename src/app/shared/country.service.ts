@@ -8,26 +8,26 @@ import { Country } from '../country'
 export class CountryService {
 
   private country:Country;
-  private baseURI : string = 'http://localhost:8080';
+  private baseURI : string = 'http://localhost:8080/';
   private headers = new HttpHeaders().set('Content-Type','application/json')
   constructor(private http:HttpClient) { }
 
   createCountry(country:Country){
 
-    return this.http.post(this.baseURI + '/', country,{ headers:this.headers});
+    return this.http.post(this.baseURI , country,{ headers:this.headers});
   }
   readCountries(){
 
-    return this.http.get(this.baseURI + '/',{ headers:this.headers});
+    return this.http.get(this.baseURI ,{ headers:this.headers});
   }
 
   updateCountry(country:Country) {
 
-    return this.http.put(this.baseURI+ '/', country, { headers:this.headers});
+    return this.http.put(this.baseURI , country, { headers:this.headers});
   }
   deleteCountry(id:string){
 
-    return this.http.delete(this.baseURI+'/'+id,{ headers:this.headers});
+    return this.http.delete(this.baseURI + id,{ headers:this.headers});
   }
 
   setter(country:Country){

@@ -6,7 +6,7 @@ import { AppComponent } from './app.component';
 import { CreateUpdateComponent } from './components/create-update/create-update.component';
 import { ListComponent } from './components/list/list.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
-import {CountryService } from './shared/country.service'
+import {CountryService } from './shared/country.service';
 import { FormsModule } from '@angular/forms';
 
 
