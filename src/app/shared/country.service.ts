@@ -1,9 +1,9 @@
-import { Injectable } from '@angular/core';
-import { HttpClient,HttpHeaders } from '@angular/common/http';
-import { Country } from '../country'
+import { Injectable } from "@angular/core";
+import { HttpClient, HttpHeaders } from "@angular/common/http";
+import { Country } from "../country";
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: "root"
 })
 export class CountryService {
 
@@ -30,11 +30,11 @@ export class CountryService {
     return this.http.delete(this.baseURI + id,{ headers:this.headers});
   }
 
-  setter(country:Country){
-    this.country=country;
+  setter(country: Country) {
+    this.country = country;
   }
 
-  getter(){
+  getter(): Country {
     return this.country;
   }
 }

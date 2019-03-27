@@ -4,34 +4,37 @@ import { CountryService } from '../../shared/country.service';
 import { Router } from '@angular/router';
 
 @Component({
-  selector: 'app-list',
-  templateUrl: './list.component.html',
-  styleUrls: ['./list.component.css']
+  selector: "app-list",
+  templateUrl: "./list.component.html",
+  styleUrls: ["./list.component.css"]
 })
 export class ListComponent implements OnInit {
   public countries:Country[];
 
-  constructor(private _countryService:CountryService , private router:Router) { }
+  constructor(
+    private _countryService: CountryService,
+    private router: Router
+  ) {}
 
   ngOnInit() {
     this.readCountries();
   }
-  readCountries(){
+  readCountries() {
     this._countryService.readCountries().subscribe(
       data => {
         console.log(data);
-        this.countries= data['msg'];
-        console.log(this.countries)
+        this.countries = data["msg"];
+        console.log(this.countries);
       },
       error => {
         console.log(error);
       }
-    )
+    );
   }
 
-  doUpdate(country){
+  doUpdate(country) {
     this._countryService.setter(country);
-    this.router.navigate(['/createUpdate']);
+    this.router.navigate(["/createUpdate"]);
   }
 
   doDelete(country){
@@ -41,5 +44,4 @@ export class ListComponent implements OnInit {
 
     })
   }
-
 }

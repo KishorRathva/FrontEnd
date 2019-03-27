@@ -11,9 +11,9 @@ import { FormsModule } from '@angular/forms';
 
 
 const appRoutes: Routes = [
-  {path: '', component: ListComponent},
-  {path: 'createUpdate', component: CreateUpdateComponent}
-]
+  { path: "", component: ListComponent },
+  { path: "createUpdate", component: CreateUpdateComponent }
+];
 
 @NgModule({
   declarations: [
@@ -28,7 +28,7 @@ const appRoutes: Routes = [
     FormsModule,
     RouterModule.forRoot(appRoutes)
   ],
-  providers: [CountryService ],
+  providers: [CountryService],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {}
